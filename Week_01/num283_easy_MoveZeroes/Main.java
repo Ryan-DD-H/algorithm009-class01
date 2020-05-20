@@ -45,8 +45,7 @@ class Solution {
             if (nums[pointer] != 0){
                 int tmp = nums[pointer];
                 nums[pointer] = nums[isZero];
-                nums[isZero] = tmp;
-                isZero++;
+                nums[isZero++] = tmp;
             }
         }
     }
