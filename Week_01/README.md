@@ -37,7 +37,7 @@ if (nums[i] != 0){
 }
 ```
 
-覃老师是直接把nums[i]的值赋给了nums[j],然后判断i是否是等于j的，来确定是否把num[i]置零。我觉得如果使用交换的话，可能会更优雅一点吧。（当然，可能每个人的审美不一样，哈哈哈）
+覃老师是直接把nums[i]的值赋给了nums[j],然后判断i是否是等于j的，来确定是否把num[i]置零。我觉得如果使用类似于交换的思想的话，可能会更优雅一点吧。（当然，可能每个人的审美不一样，哈哈哈）
 
 下面是我的代码：
 
@@ -50,10 +50,9 @@ class Solution {
         int isZero = 0;
         int length = nums.length;
         for (int pointer = 0; pointer < length; pointer++) {
-            if (nums[pointer] != 0){
-                int tmp = nums[pointer];
-                nums[pointer] = nums[isZero];
-                nums[isZero++] = tmp;
+            if (nums[pointer] != 0 && pointer != isZero++){
+                nums[isZero-1] = nums[pointer];
+                nums[pointer] = 0;
             }
         }
     }

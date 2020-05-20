@@ -41,11 +41,10 @@ class Solution {
         //如果pointer指向的元素为零则跳过；如果指向的位置的值不为零，则将其值与isZero所指向的位置的值交换。
         int isZero = 0;
         int length = nums.length;
-        for (int pointer = 0; pointer < length; pointer++) {
-            if (nums[pointer] != 0){
-                int tmp = nums[pointer];
-                nums[pointer] = nums[isZero];
-                nums[isZero++] = tmp;
+             for (int pointer = 0; pointer < length; pointer++) {
+            if (nums[pointer] != 0 && pointer != isZero++){
+                nums[isZero-1] = nums[pointer];
+                nums[pointer] = 0;
             }
         }
     }
